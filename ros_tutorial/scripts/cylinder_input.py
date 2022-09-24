@@ -12,7 +12,6 @@ height = float(input("Enter Height: "))				#Entering input on Pub Height
 while not rospy.is_shutdown():
 	radius_pub.publish(radius)				#Publishing the radius val with topic list
 	height_pub.publish(height)                              #Publishing the height val with topic list
-	density_pub.publish(density)
 	rospy.sleep(0.1)
 
 
