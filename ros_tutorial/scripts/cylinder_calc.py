@@ -45,7 +45,7 @@ rospy.Subscriber("/radius", Float64, radius_callback)			#Subscribe to radius top
 rospy.Subscriber("/radius_squared", Float64, radius_squared_callback)
 rospy.Subscriber("/height", Float64, height_callback)
 pub = rospy.Publisher("/cylinder", Cylinder, queue_size=10)			#Published the cylinder calculated as topic 
-vol_pub = rospy.Publisher("/volume", Float64, queue_size=10)
+
 
 while not rospy.is_shutdown():
 	calculate()	#So that it calculate all the time but this is going to calculate if all variable is found
