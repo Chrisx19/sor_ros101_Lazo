@@ -9,7 +9,6 @@ density_pub = rospy.Publisher("/density", Float64, queue_size=10)
 
 radius = float(input("Enter Radius: "))				#Entering input on pub radius
 height = float(input("Enter Height: "))				#Entering input on Pub Height
-density = float(input("Enter Density: "))
 
 while not rospy.is_shutdown():
 	radius_pub.publish(radius)				#Publishing the radius val with topic list
