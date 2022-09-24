@@ -5,7 +5,6 @@ from std_msgs.msg import Float64      #This is a message that is able to handle 
 rospy.init_node("Cylinder_input")
 radius_pub = rospy.Publisher("/radius", Float64, queue_size=10)	#This becomes the topic
 height_pub = rospy.Publisher("/height", Float64, queue_size=10)	#Becomes the topic *ROS topic list*
-density_pub = rospy.Publisher("/density", Float64, queue_size=10)
 
 radius = float(input("Enter Radius: "))				#Entering input on pub radius
 height = float(input("Enter Height: "))				#Entering input on Pub Height
