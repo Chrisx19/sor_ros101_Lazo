@@ -38,7 +38,6 @@ def calculate():
 		msg.volume = pi * radius_squared *height			#Inside of msg file created made, volume
 		msg.surface_area = 2 * pi * (radius * height + radius_squared)	#Inside of msg file created made, surface_area
 		pub.publish(msg)						#publish the value on topic "Cylinder"
-		vol_pub.publish(msg.volume)
 
 rospy.init_node("cylinder_calc")					#Always start the script with title for node
 rospy.Subscriber("/radius", Float64, radius_callback)			#Subscribe to radius topic to get data, and making a call back for callback function
