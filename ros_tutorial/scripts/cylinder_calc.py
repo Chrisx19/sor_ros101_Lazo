@@ -34,16 +34,16 @@ def height_callback(data):
 
 def calculate():
 	if radius_found and radius_squared_found and height_found:		#If all of them are true then continue to this function
-		msg = Cylinder()						#This is the msg file created, gonna use this as parameter init
-		msg.volume = pi * radius_squared *height			#Inside of msg file created made, volume
-		msg.surface_area = 2 * pi * (radius * height + radius_squared)	#Inside of msg file created made, surface_area
-		pub.publish(msg)						#publish the value on topic "Cylinder"
+		msg_cy = Cylinder()						#This is the msg file created, gonna use this as parameter init
+		msg_cy.volume = pi * radius_squared *height			#Inside of msg file created made, volume
+		msg_cy.surface_area = 2 * pi * (radius * height + radius_squared)#Inside of msg file created made, surface_area
+		pub_cy.publish(msg_cy)						#publish the value on topic "Cylinder"
 
 rospy.init_node("cylinder_calc")					#Always start the script with title for node
 rospy.Subscriber("/radius", Float64, radius_callback)			#Subscribe to radius topic to get data, and making a call back for callback function
 rospy.Subscriber("/radius_squared", Float64, radius_squared_callback)
 rospy.Subscriber("/height", Float64, height_callback)
-pub = rospy.Publisher("/cylinder", Cylinder, queue_size=10)		#Published the cylinder calculated as topic 
+pub_cy = rospy.Publisher("/cylinder", Cylinder, queue_size=10)		#Published the cylinder calculated as topic 
 
 
 while not rospy.is_shutdown():
