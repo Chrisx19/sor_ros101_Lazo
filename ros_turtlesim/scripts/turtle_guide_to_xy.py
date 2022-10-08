@@ -5,8 +5,8 @@ import math
 from turtlesim.msg import Pose
 from geometry_msgs.msg import Twist 
 
-x = 5.54444456100463
-y = 5.54444456100463
+x = 5.5444445610046
+y = 5.5444445610046
 theta = 0
 
 def pos_callback(pose_msg):     #grabbing data on msg file
@@ -57,10 +57,10 @@ rospy.init_node('turtle')
 vel_pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
 pose_sub = rospy.Subscriber('turtle1/pose', Pose, pos_callback)
 
-x_goal = rospy.get_param("x", 5.54444456100463)
+x_goal = rospy.get_param("x", 5.5444445610046)
 x_curr = rospy.set_param('x', x_goal)
 
-y_goal = rospy.get_param("y", 5.54444456100463)
+y_goal = rospy.get_param("y", 5.5444445610046)
 y_curr = rospy.set_param('y', y_goal)
 
 goal_x = x_goal
