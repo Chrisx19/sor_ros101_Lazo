@@ -208,4 +208,5 @@ catkin_install_python(
 	PROGRAMS
 	scripts/square_turtle.py
 	scripts/turtle_guide_to_xy.py
+	scripts/joy_turtle.py
 	DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
