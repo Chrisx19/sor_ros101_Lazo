@@ -10,6 +10,7 @@ project(ros_turtlesim)
 find_package(catkin REQUIRED COMPONENTS
 	rospy
 	geometry_msgs
+	sensor_msgs
 	turtlesim
 )
 
