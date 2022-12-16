@@ -13,7 +13,7 @@ msg = Twist()   #constructor
 # while not rospy.is_shutdown():
     # Move forward          When sending value, it has to be continues so that robot dont stop
 start_time = time.time()            #stright
-while ( (time.time() - start_time) < 20):   #one second to go forward
+while ( (time.time() - start_time) < 5):   #one second to go forward
     msg.linear.x = 63          #m/s
     msg.angular.z = 0.0         #rad/sec
     publisher.publish(msg)
@@ -24,7 +24,8 @@ publisher.publish(msg)
 start_time = time.time()
 while (time.time() - start_time) < 1:   #one second to turn
     msg.linear.x = 63                      #m/s
-    msg.angular.z =             #rad/sec  pi/2 on unit circle
+    msg.angular.z = -350           #rad/sec  pi/2 on unit circle
     publisher.publish(msg)
     time.sleep(0.1)
+msg.linear.x = 0
 publisher.publish(msg)
